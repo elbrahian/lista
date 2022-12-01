@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo}}</span>
+                    <form class="mt-3" [formGroup]="productoFrom" (ngSubmit)="agregarproducto()"  >
+                        <div class="mb-3">
+                            <input type="text" formControlName="producto" class="form-control" placeholder="Producto">
+                                <div class="text-danger" *ngIf="validateInputProduct()">
+                                <span>El Nombre <strong>es Obligatorio!</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="categoria" class="form-control" placeholder="Categoria">
+                                <div class="text-danger" *ngIf="validateInputProduct()">
+                                <span>La Categoria<strong>es Obligatoria!</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="ubicacion" class="form-control" placeholder="Ubicacion">
+                                <div class="text-danger" *ngIf="validateInputProduct()">
+                                <span>La Ubicacion <strong>es Obligatoria!</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio" class="form-control" placeholder="Precio $">
+                                <div class="text-danger" *ngIf="validateInputProduct()">
+                                <span>El Precio <strong>es Obligatorio!</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                          <input type="text" formControlName="estado" class="form-control" placeholder="estado">
+                              <div class="text-danger" *ngIf="validateInputProduct()">
+                              <span>El estado<strong>es Obligatorio!</strong></span>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                        <input type="number" formControlName="unidad" class="form-control" placeholder="unidad">
+                            <div class="text-danger" *ngIf="validateInputProduct()">
+                            <span>Las unidades<strong>son Obligatorias!</strong></span>
+                        </div>
+                    </div>
+                        <div class="class mb-3">
+                            <button [routerLink]="['/listar']" routerLinkActive="router-link-active"  class="btn btn-secondary float-start" >VOLVER</button>
+                            <button type="submit" [disabled]="productoFrom.invalid" class="btn btn-success float-end">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
